@@ -38,7 +38,7 @@ public class TableFragment extends Fragment {
                 viewFlipper.showNext();
             }
         });
-        return inflater.inflate(R.layout.fragment_table, container, false);
+        return view;
     }
 
 
