@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Easy_chemistry</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="h_1_1">H - водород, порядковый номер = 1, атомная масса = 1</string>
+    <string name="next">next</string>
+    <string name="previous">previous</string>
+</resources>
