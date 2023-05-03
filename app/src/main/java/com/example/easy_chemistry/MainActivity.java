@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TableFragment tableFragment = new TableFragment();
     GameFragment gameFragment = new GameFragment();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
