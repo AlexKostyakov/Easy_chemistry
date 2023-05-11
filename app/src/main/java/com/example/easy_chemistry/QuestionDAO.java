@@ -11,9 +11,9 @@ import java.util.List;
 @Dao
 public interface QuestionDAO {
     @Insert
-    void insertQuestion();
+    void insertQuestion(Question question);
     @Delete
-    void deleteQuestion();
+    void deleteQuestion(Question question);
     @Query("SELECT * FROM QUESTIONS_DB")
     LiveData<List<Question>> getAllQuestions();
 }

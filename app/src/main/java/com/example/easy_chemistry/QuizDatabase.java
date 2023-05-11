@@ -6,9 +6,18 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 @Database(entities = {Question.class}, version = 1)
 
 public abstract class QuizDatabase extends RoomDatabase {
+
+    private static final int NUMBER_OF_THREADS = 4;
+
+    public static final ExecutorService databaseWriteExecutor =
+
+            Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
     public abstract QuestionDAO questionDao();
 
@@ -25,8 +34,11 @@ public abstract class QuizDatabase extends RoomDatabase {
                     .fallbackToDestructiveMigration()
 
                     .build();
+
         }
 
         return instance;
+
     }
+
 }

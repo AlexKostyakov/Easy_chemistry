@@ -22,6 +22,18 @@ public class QuestionRepository {
     public LiveData<List<Question>> getAllQuestions(){
         return listLiveData;
     }
+    public void insert(Question question) {
+
+        QuizDatabase.databaseWriteExecutor.execute(() -> {
+            questionDAO.insertQuestion(question);
+        });
+    }
+
+    public void delete(Question question) {
+        QuizDatabase.databaseWriteExecutor.execute(() -> {
+            questionDAO.deleteQuestion(question);
+        });
+    }
 
 
 }
