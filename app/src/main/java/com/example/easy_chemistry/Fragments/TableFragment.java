@@ -1,4 +1,4 @@
-package com.example.easy_chemistry;
+package com.example.easy_chemistry.Fragments;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ViewFlipper;
+
+import com.example.easy_chemistry.Adapters.MyImageAdapter;
+import com.example.easy_chemistry.R;
 
 import java.util.ArrayList;
 import java.util.List;

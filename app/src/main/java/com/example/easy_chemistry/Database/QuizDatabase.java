@@ -1,10 +1,13 @@
-package com.example.easy_chemistry;
+package com.example.easy_chemistry.Database;
 
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+
+import com.example.easy_chemistry.DAO.QuestionDAO;
+import com.example.easy_chemistry.Question;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

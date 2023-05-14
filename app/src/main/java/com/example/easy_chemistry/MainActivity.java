@@ -1,11 +1,13 @@
 package com.example.easy_chemistry;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.easy_chemistry.Fragments.GameFragment;
+import com.example.easy_chemistry.Fragments.HomeFragment;
+import com.example.easy_chemistry.Fragments.TableFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

@@ -4,6 +4,9 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.easy_chemistry.DAO.QuestionDAO;
+import com.example.easy_chemistry.Database.QuizDatabase;
+
 import java.util.List;
 
 public class QuestionRepository {

@@ -1,10 +1,12 @@
-package com.example.easy_chemistry;
+package com.example.easy_chemistry.DAO;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.easy_chemistry.Question;
 
 import java.util.List;
 

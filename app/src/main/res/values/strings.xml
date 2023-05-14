@@ -5,4 +5,10 @@
     <string name="h_1_1">H - водород, порядковый номер = 1, атомная масса = 1</string>
     <string name="next">следующий</string>
     <string name="previous">предыдущий</string>
+    <string name="gameover">Игра Окончена</string>
+    <string name="count_textview">Ваш счет:</string>
+    <string name="restart_text">Заново</string>
+    <string name="quit_text">Выйти</string>
+    <string name="next_btn">Далее</string>
+    <string name="answer_text">Вопрос</string>
 </resources>

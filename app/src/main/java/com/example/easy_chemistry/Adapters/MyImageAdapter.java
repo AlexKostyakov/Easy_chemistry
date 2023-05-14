@@ -1,4 +1,4 @@
-package com.example.easy_chemistry;
+package com.example.easy_chemistry.Adapters;
 
 import android.graphics.Bitmap;
 import android.view.View;
