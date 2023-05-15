@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
@@ -32,21 +33,22 @@ public class GameFragment extends Fragment {
     private TextView textView;
     private RadioGroup radioGroup;
     private Button button;
-    private static int indexator = 0;
+    private int index = 0;
     public static int COUNT_OF_QUESTIONS = 2;
     private List<Question> randomQuestionsList;
     private static final String LOG_TAG = GameFragment.class.getName();
-    private static int score = 0;
+    private int score = 0;
     private QuestionViewModel questionViewModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_game, container, false);
         textView = view.findViewById(R.id.questionTextView);
-
         radioGroup = view.findViewById(R.id.answersGroup);
 
         button = view.findViewById(R.id.nextButton);
+        index =0;
+        score=0;
         return view;
     }
 
@@ -60,20 +62,20 @@ public class GameFragment extends Fragment {
                 List<Question> listQuestions = new ArrayList<>(questions);
                 randomQuestionsList = selectRandomQuestion(listQuestions);
                 Log.d(LOG_TAG,randomQuestionsList.toString());
-                showQuestion(randomQuestionsList.get(indexator));
+                showQuestion(randomQuestionsList.get(index));
 
             }
         });
         button.setOnClickListener(v -> {
 
             RadioButton selectedAnswer = getView().findViewById(radioGroup.getCheckedRadioButtonId());
-            if(selectedAnswer != null && selectedAnswer.getText().toString().equals(randomQuestionsList.get(indexator).getCorrectAnswer())){
+            if(selectedAnswer != null && selectedAnswer.getText().toString().equals(randomQuestionsList.get(index).getCorrectAnswer())){
                 score+=10;
 
             }
-            indexator += 1;
-            if (indexator < COUNT_OF_QUESTIONS){
-                showQuestion(randomQuestionsList.get(indexator));
+            index += 1;
+            if (index < COUNT_OF_QUESTIONS){
+                showQuestion(randomQuestionsList.get(index));
             }
             else {
                 onFinishGame();
@@ -83,9 +85,7 @@ public class GameFragment extends Fragment {
 
         });
     }
-    public  void checkAnswer(){
 
-    }
 
     private void onFinishGame() {
         Dialog dialog = new Dialog(getContext(), R.style.Dialog_Theme);
@@ -97,10 +97,17 @@ public class GameFragment extends Fragment {
         restartButton.setOnClickListener(v -> {
             Log.d(LOG_TAG, "restart");
             dialog.dismiss();
+            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container, new GameFragment());
+            fragmentTransaction.commit();
+
         });
         homeButton.setOnClickListener(v -> {
             Log.d(LOG_TAG, "home");
             dialog.dismiss();
+            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.container, new HomeFragment());
+            fragmentTransaction.commit();
         });
         dialog.show();
     }
