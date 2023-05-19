@@ -11,4 +11,5 @@
     <string name="quit_text">Выйти</string>
     <string name="next_btn">Далее</string>
     <string name="answer_text">Вопрос</string>
+    <string name="your_count">Ваш счет:</string>
 </resources>

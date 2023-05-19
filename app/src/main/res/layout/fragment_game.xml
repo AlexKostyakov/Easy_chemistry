@@ -16,16 +16,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/liveOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_star_24" />
 
         <ImageView
+            android:id="@+id/liveTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_star_24" />
 
         <ImageView
+            android:id="@+id/liveThree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_star_24" />
@@ -69,10 +72,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/countView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ваш счет: "
+        android:text="@string/your_count"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
