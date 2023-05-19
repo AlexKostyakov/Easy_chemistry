@@ -32,7 +32,7 @@ import java.util.List;
 
 public class GameFragment extends Fragment {
 
-    private MediaPlayer mediaPlayer;
+   // private MediaPlayer mediaPlayer;
     private TextView textViewCounter;
     private ImageView live1;
     private ImageView live2;
@@ -69,7 +69,7 @@ public class GameFragment extends Fragment {
         questionViewModel = new ViewModelProvider(this).get(QuestionViewModel.class);
         InitializeQuestions initializeQuestions = new InitializeQuestions(questionViewModel);
         initializeQuestions.initialize();
-        mediaPlayer = new MediaPlayer();
+        //mediaPlayer = new MediaPlayer();
         questionViewModel.getAllQuestions().observe(getViewLifecycleOwner(), questions -> {
             if (questions != null && !questions.isEmpty()) {
                 List<Question> listQuestions = new ArrayList<>(questions);
@@ -86,10 +86,10 @@ public class GameFragment extends Fragment {
                     && selectedAnswer.getText().toString().equals(randomQuestionsList.get(index).getCorrectAnswer())){
                 score+=10;
                 textViewCounter.setText("Ваш счет: "+ score);
-                playVictorySound();
+                //playVictorySound();
             } else {
                 lives -= 1;
-                playLoseSound();
+                //playLoseSound();
                 Log.d(LOG_TAG, lives+"");
                 switch (lives){
                     case 2: live3.setVisibility(View.GONE);
@@ -153,26 +153,30 @@ public class GameFragment extends Fragment {
         return questionList;
     }
 
-    private void playVictorySound(){
-        if (mediaPlayer == null){
-            mediaPlayer = MediaPlayer.create(getContext(), R.raw.right);
-        }
-        mediaPlayer.start();
-    }
-
-    private void playLoseSound(){
-        if (mediaPlayer == null){
-            mediaPlayer = MediaPlayer.create(getContext(), R.raw.mistake);
-        }
-        mediaPlayer.start();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if(mediaPlayer != null ){
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-    }
+//    private void playVictorySound() {
+//        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+//            mediaPlayer.stop();
+//            mediaPlayer.release();
+//        }
+//        mediaPlayer = MediaPlayer.create(getContext(), R.raw.right);
+//        mediaPlayer.start();
+//    }
+//
+//    private void playLoseSound() {
+//        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+//            mediaPlayer.stop();
+//            mediaPlayer.release();
+//        }
+//        mediaPlayer = MediaPlayer.create(getContext(), R.raw.mistake);
+//        mediaPlayer.start();
+//    }
+//
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//        if(mediaPlayer != null ){
+//            mediaPlayer.release();
+//            mediaPlayer = null;
+//        }
+//    }
 }
