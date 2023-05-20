@@ -8,8 +8,11 @@
     <string name="gameover">Игра Окончена</string>
     <string name="count_textview">Ваш счет:</string>
     <string name="restart_text">Заново</string>
-    <string name="quit_text">Выйти</string>
+    <string name="quit_rules">Выйти</string>
     <string name="next_btn">Далее</string>
     <string name="answer_text">Вопрос</string>
     <string name="your_count">Ваш счет:</string>
+    <string name="rulesText">Во вкладке Game находится викторина, в которой надо выбрать единственный правильный ответ. Вам будет предложено в самом начале обозначение элемента, потом его порядковый номер, затем атомная масса, после - название элемента на латыни, в самом конце - как правильно его произносить. У вас есть три жизни, отображенные звездочками в левом верхнем углу.</string>
+    <string name="rulesTitle">Правила</string>
+    <string name="rulesButton">Правила</string>
 </resources>

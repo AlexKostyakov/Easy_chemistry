@@ -42,7 +42,7 @@ public class GameFragment extends Fragment {
     private RadioGroup radioGroup;
     private Button button;
     private int index = 0;
-    public static int COUNT_OF_QUESTIONS = 2;
+    public static int COUNT_OF_QUESTIONS = 3;
     private List<Question> randomQuestionsList;
     private static final String LOG_TAG = GameFragment.class.getName();
     private int score = 0;

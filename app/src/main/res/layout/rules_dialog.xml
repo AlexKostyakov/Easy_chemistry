@@ -3,37 +3,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="20dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/gameover"
+        android:text="@string/rulesTitle"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:gravity="center">
+        android:gravity="center"
+        android:textSize="50dp">
     </TextView>
 
     <TextView
         android:id="@+id/counter_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/count_textview"
+        android:text="@string/rulesText"
         android:textColor="@color/black"
-        android:gravity="center">
+        android:textSize="20dp">
+
     </TextView>
 
     <Button
-        android:id="@+id/restart_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="@string/restart_text">
-    </Button>
-
-    <Button
-        android:id="@+id/home_button"
+        android:id="@+id/home_button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/quit_rules">
     </Button>
+
 
 </LinearLayout>
